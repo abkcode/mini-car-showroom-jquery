@@ -1,5 +1,5 @@
 var app = {};
-app.baseUrl = 'http://localhost:8888';
+app.baseUrl = 'http://159.65.155.186';
 app.manufacturers = {};
 app.models = {};
 app.dashboardData = {};
