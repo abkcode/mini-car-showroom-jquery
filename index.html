@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="app.css">
+
+	<title>Mini Car Showroom</title>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Mini Car Showroom</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+	</header>
+
+	<div class="container">
+		<div class="mt-5">
+			<p class="loader-dashboard text-center">
+				<i class="fas fa-sync-alt fa-spin fa-5x"></i>
+			</p>
+			<div class="content-dashboard d-none">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelAddManufacturer">Add Manufacturer</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelAddModal">Add Model</button>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelAddCar">Add Car</button>
+				<table class="table table-bordered table-models mt-3">
+					<thead>
+						<th>Manufacturer Name</th>
+						<th>Model Name</th>
+						<th>Count</th>
+						<th class="text-center" style="width: 20%">Actions</th>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="modelAddManufacturer">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-add-manufacturer needs-validation" novalidate>
+					<div class="modal-header">
+						<h5 class="modal-title">Add Manufacturer</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="inputMaName">Name</label>
+							<input type="text" class="form-control" id="inputMaName" name="name" maxlength="255" required>
+							<div class="invalid-feedback"></div>
+						</div>
+						<div class="form-group">
+							<div class="alert alert-danger alert-errors d-none" role="alert">
+								Errors
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="modelAddModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form class="form-add-model needs-validation" novalidate>
+					<div class="modal-header">
+						<h5 class="modal-title">Add Model</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="inputMoName">Name</label>
+							<input type="text" class="form-control" id="inputMoName" name="name" maxlength="255" required>
+							<div class="invalid-feedback"></div>
+						</div>
+						<div class="form-group">
+							<label for="inputMoManufacturer">Manufacturer</label>
+							<select class="form-control" id="inputMoManufacturer" name="manufacturer_id" required></select>
+							<div class="invalid-feedback"></div>
+						</div>
+						<div class="form-group">
+							<div class="alert alert-danger alert-errors d-none" role="alert">
+								Errors
+								<ul></ul>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="modelAddCar">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<form class="form-add-car needs-validation" novalidate>
+					<div class="modal-header">
+						<h5 class="modal-title">Add Car</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="form-group col-md-6">
+								<label for="inputCaModel">Model</label>
+								<select class="form-control" id="inputCaModel" name="model_id" required></select>
+								<div class="invalid-feedback"></div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCaColor">Color</label>
+								<input type="text" class="form-control" id="inputCaColor" name="color" maxlength="255" required>
+								<div class="invalid-feedback"></div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCaMYear">Manufaturing Year</label>
+								<input type="number" class="form-control" id="inputCaMYear" name="manufacturing_year" required>
+								<div class="invalid-feedback"></div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCaRNumber">Registration Number</label>
+								<input type="text" class="form-control" id="inputCaRNumber" name="registration_number" maxlength="255" required>
+								<div class="invalid-feedback"></div>
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCaImage1">Image 1 <small></small></label>
+								<input type="file" class="form-control inputImage" id="inputCaImage1" accept="image/*" required>
+								<div class="invalid-feedback"></div>
+								<img class="img img-model mt-3 d-none">
+								<input type="hidden" name="img1">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputCaImage2">Images 2 <small></small></label>
+								<input type="file" class="form-control inputImage" id="inputCaImage2" accept="image/*" required>
+								<div class="invalid-feedback"></div>
+								<img class="img img-model mt-3 d-none">
+								<input type="hidden" name="img2">
+							</div>
+							<div class="form-group col-md-12">
+								<label for="inputCaNote">Note</label>
+								<textarea class="form-control" id="inputCaNote" name="note" required></textarea>
+								<div class="invalid-feedback"></div>
+							</div>
+							<div class="form-group col-md-12">
+								<div class="alert alert-danger alert-errors d-none" role="alert">
+									Errors
+									<ul></ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" tabindex="-1" role="dialog" id="modelCars">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Cars</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="loader-cars text-center">
+						<i class="fas fa-sync-alt fa-spin fa-5x"></i>
+					</p>
+					<div class="content-cars d-none">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="app.js"></script>
+</body>
+</html>
