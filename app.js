@@ -121,7 +121,7 @@ function fetchInitData() {
 				rows += '<td>' + model.manufacturer_name + '</td>';
 				rows += '<td>' + model.model_name + '</td>';
 				rows += '<td>' + model.count + '</td>';
-				rows += '<td class="text-center"><button class="btn btn-primary btn-view-cars" data-id="' + model.model_id + '">View</td>';
+				rows += '<td class="text-center"><button class="btn btn-primary btn-view-cars" data-id="' + model.id + '">View</td>';
 				rows += '</tr>';
 			});
 			$('.table-models tbody').html(rows);
