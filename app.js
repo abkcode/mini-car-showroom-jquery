@@ -85,8 +85,8 @@ $(document).ready(function(){
 				btn.closest('.car-con').remove();
 				if($('.car-con').length == 0) {
 					$('#modelCars').modal('hide');
-					fetchInitData();
 				}
+				fetchInitData();
 			}
 		});
 	});
