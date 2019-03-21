@@ -1,5 +1,6 @@
 var app = {};
 app.baseUrl = 'https://cors-anywhere.herokuapp.com/http://159.65.155.186';
+app.imgUrl = 'http://159.65.155.186';
 app.manufacturers = {};
 app.models = {};
 app.dashboardData = {};
@@ -51,7 +52,7 @@ $(document).ready(function(){
 			success : function(data) {
 				console.log(data);
 				icon.html('');
-				input.parent().find('img').removeClass('d-none').attr('src',app.baseUrl + data.img_name);
+				input.parent().find('img').removeClass('d-none').attr('src',app.imgUrl + data.img_name);
 				input.parent().find('input[type=hidden]').val(data.img_name);
 			},
 			error : function(err) {
@@ -161,8 +162,8 @@ function fetchInitData() {
 					html += '<tr><td><strong>Color</strong></td><td>'+car.color+'</td></tr>';
 					html += '<tr><td><strong>Manufacturing Year</strong></td><td>'+car.manufacturing_year+'</td></tr>';
 					html += '<tr><td><strong>Registration Number</strong></td><td>'+car.registration_year+'</td></tr>';
-					html += '<tr><td><strong>Image 1</strong></td><td><img class="img img-model" src="'+app.baseUrl+'/uploads/img/'+car.img1+'"></td></tr>';
-					html += '<tr><td><strong>Image 2</strong></td><td><img class="img img-model" src="'+app.baseUrl+'/uploads/img/'+car.img2+'"></td></tr>';
+					html += '<tr><td><strong>Image 1</strong></td><td><img class="img img-model" src="'+app.imgUrl+car.img1+'"></td></tr>';
+					html += '<tr><td><strong>Image 2</strong></td><td><img class="img img-model" src="'+app.imgUrl+car.img2+'"></td></tr>';
 					html += '<tr><td><strong>Note</strong></td><td>'+car.note+'</td></tr>';
 					html += '<tr><td colspan="2" class="text-center"><button type="button" class="btn btn-success btn-sold" data-id="'+car.id+'">Sold</button></td></tr>';
 					html += '</table>';
