@@ -1,6 +1,6 @@
 var app = {};
 app.baseUrl = 'https://cors-anywhere.herokuapp.com/http://159.65.155.186';
-app.imgUrl = 'http://159.65.155.186';
+app.imgUrl = 'http://159.65.155.186/uplaods/img/';
 app.manufacturers = {};
 app.models = {};
 app.dashboardData = {};
