@@ -161,7 +161,7 @@ function fetchInitData() {
 					html += '<tr><td style="width:200px;"><strong>Model</strong></td><td>'+app.models[car.model_id].name+'</td></tr>';
 					html += '<tr><td><strong>Color</strong></td><td>'+car.color+'</td></tr>';
 					html += '<tr><td><strong>Manufacturing Year</strong></td><td>'+car.manufacturing_year+'</td></tr>';
-					html += '<tr><td><strong>Registration Number</strong></td><td>'+car.registration_year+'</td></tr>';
+					html += '<tr><td><strong>Registration Number</strong></td><td>'+car.registration_number+'</td></tr>';
 					html += '<tr><td><strong>Image 1</strong></td><td><img class="img img-model" src="'+app.imgUrl+car.img1+'"></td></tr>';
 					html += '<tr><td><strong>Image 2</strong></td><td><img class="img img-model" src="'+app.imgUrl+car.img2+'"></td></tr>';
 					html += '<tr><td><strong>Note</strong></td><td>'+car.note+'</td></tr>';
